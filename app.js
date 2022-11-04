@@ -104,4 +104,29 @@ function drawCards() {
   )
 }
 
+function addPlayer(name) {
+  heros.forEach(hero => {
+    if (hero.name == name) hero.selected = true
+  })
+  drawCards()
+}
+
+function borgAttack() {
+  let attack = 0
+  bosses.forEach(boss => {
+    if (boss.selected == true)
+      attack += boss.phasers
+  }
+  )
+  heros.forEach(hero => {
+    hero.health -= attack
+    if (hero.selected == true)
+      if (hero.health <= 0) {
+        hero.health = 0
+      }
+  })
+  drawCards()
+}
+
 drawCards()
+setInterval(() => borgAttack(),)
