@@ -129,4 +129,4 @@ function borgAttack() {
 }
 
 drawCards()
-setInterval(() => borgAttack(),)
+setInterval(() => borgAttack(), 5000)
